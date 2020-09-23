@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript"
+        src="http://code.jquery.com/jquery-2.1.4.min.js">
+</script>
+<script>
+    $(document).ready(function() {
+        var formObj = $("#register");
+        $("#btnRegister").on("click", function()
+        {
+            formObj.attr("action", "/");
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+
+        $("#btnMain").on("click", function()
+        {
+            self.location = "/";
+        });
+
+        $("#overlapbtn").on("click", function() {
+            //alert("a");
+
+            var id = $('#id').val();
+            console.log("id : " + id);
+
+            $.ajax({
+                url: "/ajaxtest?id=" + id,
+                type: "get",
+                success: function(data){
+                    if(!data) {
+                        alert("아이디가 있습니다.");
+                    }
+                    else
+                    {
+                        alert("아이디가 없습니다.");
+                    }
+                },
+                error: function(){
+                    alert("실패");
+                }
+            });
+        });
+    });
+</script>
+<body>
+    <h1>Register</h1>
+    <form id="register" action="loginpage" th:action="@{register}"
+          th:object="${registerentity}" method="post">
+        <table>
+            <tr>
+                <td>Id</td>
+                <td><input type="text" name="id" th:field="*{id}"></td>
+                <td>
+                    <input type="button" id="overlapbtn" value="중복확인"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Pw</td>
+                <td><input type="text" name="pw" th:field="*{pw}"></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" value="1" name="gender" th:field="*{gender}">
+                    <input type="radio" value="2" name="gender" th:field="*{gender}">
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" name="email" th:field="*{email}"></td>
+            </tr>
+            <tr>
+                <td>Phon</td>
+                <td><input type="number" name="phone" th:field="*{phone}"></td>
+            </tr>
+        </table>
+    </form>
+    <div>
+        <button type="submit" id="btnRegister">Register</button>
+        <button type="submit" id="btnMain">Main</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript"
+        src="http://code.jquery.com/jquery-2.1.4.min.js">
+</script>
+<script>
+    $(document).ready(function() {
+        var formObj = $("#idserch");
+        $("#idserchok").on("click", function()
+        {
+            formObj.attr("action", "/idserch/success");
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+
+        $("#idsercancel").on("click", function()
+        {
+            self.location = "/";
+        });
+    });
+</script>
+<body>
+    <form id="idserch" action="success" th:action="@{idserch}" th:object="${registerentity}" method="post">
+        <table>
+            <tr>
+                <td>이메일 : </td>
+                <td><input type="text" name="email" th:field="*{email}"></td>
+            </tr>
+            <tr>
+                <td>휴대폰 번호 : </td>
+                <td><input type="text" name="phone" th:field="*{phone}"></td>
+            </tr>
+        </table>
+    </form>
+    <div>
+        <button type="submit" id="idserchok">Ok</button>
+        <button type="submit" id="idsercancel">Cancel</button>
+    </div>
+</body>
+</html>
