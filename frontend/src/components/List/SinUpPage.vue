@@ -33,26 +33,17 @@
             </table>
           </div>
           <div id="getimg" v-else>
-            <v-row>
-              <v-col>
-                <div id="poto2" ref="chartdiv"/>
-              </v-col>
-              <v-col>
-                <div id="poto3">
-                  <v-row>
-                    <v-col id="minanme">최소</v-col>
-                    <v-col><input type="number" id="min" v-model="mina"/></v-col>
-                  </v-row>
-                  <v-row>
-                    <v-col id="maxanme">최대</v-col>
-                    <v-col><input type="number" id="max" v-model="maxa"/></v-col>
-                  </v-row>
-                  <v-btn alight="center" @click="plu(mina, maxa)">확인</v-btn>
-                  <br/>
-                  <p>{{ plue }}</p>
-                </div>
-              </v-col>
-            </v-row>
+            <div id="poto2" ref="chartdiv"/>
+            <div id="poto3">
+              <v-row>
+                <v-col id="minanme">최소</v-col>
+                <v-col><input type="number" id="min" v-model="mina"/></v-col>
+                <v-col id="maxanme">최대</v-col>
+                <v-col><input type="number" id="max" v-model="maxa"/></v-col>
+                <v-col><v-btn alight="center" @click="plu(mina, maxa)">확인</v-btn></v-col>
+                <v-col><p>{{ plue }}</p></v-col>
+              </v-row>
+            </div>
           </div>
         </v-col>
         <v-col/>
@@ -72,7 +63,6 @@
       <div align="center">
         <v-btn @click="signup()" id="okbtn">확인</v-btn>
         <v-btn @click="$router.push('/')"> 취소</v-btn>
-        <slot name="test"/>
       </div>
     </template>
   </Layout>
@@ -109,7 +99,7 @@ export default {
       gra: [],
       mina: 0,
       maxa: 0,
-      plue: 0,
+      plue: null,
       server: {
         url: 'http://localhost:1234/file',
         process: {
@@ -238,12 +228,6 @@ export default {
 #poto2 {
   border: solid 2px black;
   height: 300px;
-  width: 300px;
-}
-#poto3 {
-  border: solid 2px black;
-  height: 300px;
-  width: 150px;
 }
 #okbtn {
   margin-right: 40px;
@@ -253,19 +237,21 @@ export default {
   margin-bottom : -10px;
 }
 #min {
-  width: 100px;
-  margin: -50px;
+  width: 80px;
+  margin: -35px;
   border: solid 1px black;
 }
 #minanme {
+  text-align: center;
   margin: 0px;
 }
 #max {
-  width: 100px;
-  margin: -50px;
+  width: 80px;
+  margin: -35px;
   border: solid 1px black;
 }
 #maxanme {
+  text-align: center;
   margin: 0px;
 }
 //  div { border: solid 2px black; }

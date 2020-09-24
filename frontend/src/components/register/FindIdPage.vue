@@ -5,18 +5,18 @@
       <table>
         <tr>
           <td>이름</td>
-          <td><input type="text" v-model="name"></td>
+          <td><input type="text" v-model="name" class="block"></td>
         </tr>
         <tr>
           <td>생년월일</td>
-          <td><input type="number" v-model="br"></td>
+          <td><input type="number" v-model="br" class="block"></td>
         </tr>
       </table>
 
       <table>
         <tr>
-          <td><button @click="findid()">확인</button></td>
-          <td><button @click="$router.push('/login')">취소</button></td>
+          <td><button @click="findid()" class="block">확인</button></td>
+          <td><button @click="$router.push('/login')" class="block">취소</button></td>
         </tr>
       </table>
     </div>

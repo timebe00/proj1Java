@@ -117,7 +117,7 @@ export default {
   border: solid 1px black;
 }
 #poto2 {
-  width: 1000px;
+  width: 500px;
   height: 400px;
 }
 //  div { border: solid 2px black; }

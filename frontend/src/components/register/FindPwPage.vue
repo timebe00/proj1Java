@@ -5,21 +5,21 @@
       <table>
         <tr>
           <td>이름</td>
-          <td><input type="text" v-model="name"></td>
+          <td><input type="text" v-model="name" class="block"></td>
         </tr>
         <tr>
           <td>아이디</td>
-          <td><input type="text" v-model="id"></td>
+          <td><input type="text" v-model="id" class="block"></td>
         </tr>
         <tr>
           <td>생일</td>
-          <td><input type="number" v-model="br"></td>
+          <td><input type="number" v-model="br" class="block"></td>
         </tr>
       </table>
       <table>
         <tr>
-          <td><button @click="findpw()">확인</button></td>
-          <td><button @click="$router.push('/login')">취소</button></td>
+          <td><button @click="findpw()" class="block">확인</button></td>
+          <td><button @click="$router.push('/login')" class="block">취소</button></td>
         </tr>
       </table>
     </div>

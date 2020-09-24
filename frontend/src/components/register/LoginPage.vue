@@ -5,18 +5,18 @@
       <table>
         <tr>
           <td>아이디</td>
-          <td><input type="text" v-model="id"></td>
+          <td><input type="text" v-model="id" class="block"></td>
         </tr>
         <tr>
           <td>비밀번호</td>
-          <td><input type="password" v-model="pw"></td>
+          <td><input type="password" v-model="pw" class="block"></td>
         </tr>
       </table>
 
       <table>
         <tr>
-          <td><button @click="login">로그인</button></td>
-          <td><button @click="$router.push('/')">취소</button></td>
+          <td><button @click="login" class="block">로그인</button></td>
+          <td><button @click="$router.push('/')" class="block">취소</button></td>
         </tr>
       </table>
       <table>
@@ -63,5 +63,8 @@ td {
 button {
   padding-right: 40px;
   padding-left: 40px;
+}
+.block {
+  border: solid 1px black;
 }
 </style>

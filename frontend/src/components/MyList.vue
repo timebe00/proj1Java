@@ -16,6 +16,7 @@
       :headers="headers"
       :items="mainboard"
       :search="search"
+      class="numbering"
       >
       <template v-slot:item.title="{ item }">
         <div @click="read(item.memberNo)">{{ item.title }}</div>
@@ -37,7 +38,6 @@ export default {
       message: '',
       TF: false,
       search: '',
-      num: 0,
       headers: [
         {
           text: 'No.',
@@ -91,6 +91,9 @@ export default {
           alert(err.response.data)
         })
     }
+  },
+  numbering () {
+    this.num = this.num + 1
   }
 }
 </script>

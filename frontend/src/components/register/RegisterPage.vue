@@ -4,28 +4,28 @@
       <h1 id="getTitle">회원가입</h1>
       <table>
         <tr>
-          <td>이름</td>
-          <td><input type="text" v-model="name"></td>
+          <td >이름</td>
+          <td><input type="text" v-model="name" class="block"></td>
         </tr>
         <tr>
           <td>아이디</td>
-          <td><input type="text" v-model="id"></td>
-          <td><button @click="clickUse(id)">중복확인</button></td>
+          <td><input type="text" v-model="id" class="block"></td>
+          <td><button @click="clickUse(id)" class="block">중복확인</button></td>
         </tr>
         <tr>
           <td>비밀번호</td>
-          <td><input type="password" v-model="pw"></td>
+          <td><input type="password" v-model="pw" class="block"></td>
         </tr>
         <tr>
           <td>생일</td>
-          <td><input type="number" v-model="br"></td>
+          <td><input type="number" v-model="br" class="block"></td>
         </tr>
       </table>
 
       <table>
         <tr>
-          <td><button @click="registerOK()">확인</button></td>
-          <td><button @click="$router.push('/')" type="null">취소</button></td>
+          <td><button @click="registerOK()" class="block">확인</button></td>
+          <td><button @click="$router.push('/')" type="null" class="block">취소</button></td>
         </tr>
       </table>
     </div>

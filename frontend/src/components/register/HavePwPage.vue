@@ -5,14 +5,14 @@
       <table>
         <tr>
           <td>비밀번호</td>
-          <td><input type="password" v-model="pw"></td>
+          <td><input type="password" v-model="pw" class="block"></td>
         </tr>
       </table>
 
       <table>
         <tr>
-          <td><button @click="okbutton()">확인</button></td>
-          <td><button @click="$router.push('/login')">취소</button></td>
+          <td><button @click="okbutton()" class="block">확인</button></td>
+          <td><button @click="$router.push('/login')" class="block">취소</button></td>
         </tr>
       </table>
     </div>

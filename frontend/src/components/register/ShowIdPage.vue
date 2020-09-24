@@ -11,7 +11,7 @@
 
       <table>
         <tr>
-          <td><button @click="$router.push('/login')">확인</button></td>
+          <td><button @click="$router.push('/login')" class="block">확인</button></td>
         </tr>
       </table>
     </div>
